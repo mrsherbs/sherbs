@@ -1,4 +1,3 @@
-
 local nhook 
 local GC = getgc()
 
