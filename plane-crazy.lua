@@ -3,15 +3,6 @@ repeat task.wait() until game:IsLoaded()
 local nhook 
 local GC = getgc()
 
-repeat task.wait()
-    until GC
-nhook = hookmetamethod(game, "__namecall", function(self, ...)
-    if getnamecallmethod() == "Kick" or self == game:GetService("ReplicatedStorage").Remotes.KickEvent then 
-        return true
-    end 
-    return nhook(self, ...)
-end)
-
 for _, f in ipairs(GC) do 
     if getfenv(f).script == SettingsScript and type(f) == "function" and getinfo(f).name == "destroyvals" then 
         hookfunction(f,function()end)
