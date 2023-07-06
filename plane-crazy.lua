@@ -2,7 +2,7 @@ local nhook
 local GC = getgc()
 
 repeat task.wait()
-    until GC
+    until GC and game:IsLoaded()
 
 for _, f in ipairs(GC) do 
     if getfenv(f).script == SettingsScript and type(f) == "function" and getinfo(f).name == "destroyvals" then 
